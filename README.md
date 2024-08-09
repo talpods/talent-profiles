@@ -2,6 +2,18 @@
 
 This project is an AWS Serverless application that serves talent profile pages. It is built using Node.js, Express, and AWS services like DynamoDB. The application is designed to be deployed using the Serverless Framework.
 
+## Team Members
+
+Project built by a team of passionate young engineers as part of the first [Cohort of TalPods-Jusoor Tech Talent Pipeline](https://talpods.io/talpods-jusoor-tech-talent-pipeline.html) project
+
+- [mhmmdkhoulani](https://github.com/mhmmdkhoulani)
+- [FaisalMinawi](https://github.com/FaisalMinawi)
+- [JoudyAlAshkar](https://github.com/JoudyAlAshkar)
+- [Abdalkader-Kouhda](https://github.com/Abdalkader-Kouhda)
+- [lAhmadBakkarl](https://github.com/lAhmadBakkarl)
+- [abdel-hady](https://github.com/abdel-hady)
+- [AliHousein](https://github.com/AliHousein)
+
 ## Technologies used 
 
 JavaScript, Node JS Dynamo DB, Serverless JS, Express JS, EJS, AWS Lambda, AWS S3, Code Commit for Git, CI/CD using AWS Code Build and Code Pipeline
