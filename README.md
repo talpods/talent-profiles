@@ -54,6 +54,10 @@ These variables are also configured in the `serverless.yml` file.
   ```
   This will run the Jest tests configured in the project.
 
+
+## AWS Architecture
+![aws2 drawio]()
+
 ## API Endpoints
 
 The application exposes the following API endpoints:
