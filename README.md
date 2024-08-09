@@ -2,6 +2,9 @@
 
 This project is an AWS Serverless application that serves talent profile pages. It is built using Node.js, Express, and AWS services like DynamoDB. The application is designed to be deployed using the Serverless Framework.
 
+## Application that generates profile can be found here
+[Profiles-Builder-Application](https://github.com/talpods/profile-builder)
+
 ## Team Members
 
 Project built by a team of passionate young engineers as part of the first [Cohort of TalPods-Jusoor Tech Talent Pipeline](https://talpods.io/talpods-jusoor-tech-talent-pipeline.html) project
