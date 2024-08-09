@@ -2,6 +2,13 @@
 
 This project is an AWS Serverless application that serves talent profile pages. It is built using Node.js, Express, and AWS services like DynamoDB. The application is designed to be deployed using the Serverless Framework.
 
+## Technologies used 
+
+JavaScript, Node JS Dynamo DB, Serverless JS, Express JS, EJS, AWS Lambda, AWS S3, Code Commit for Git, CI/CD using AWS Code Build and Code Pipeline
+
+## AWS Architecture
+![talent-profile-atchitecture-diagram](https://github.com/user-attachments/assets/722e55e9-5a14-47d1-beac-eec4d999995d)
+
 ## Project Structure
 
 - **index.js**: The entry point of the application. It initializes the Express app and exports the serverless handler.
@@ -53,6 +60,7 @@ These variables are also configured in the `serverless.yml` file.
   npm test
   ```
   This will run the Jest tests configured in the project.
+
 
 ## API Endpoints
 
@@ -106,6 +114,17 @@ You can test the endpoints using Postman or curl:
   ```bash
   curl https://your-api-endpoint/
   ```
+
+
+## Example Screenshots
+### Profile Summary
+![Screen Shot 2024-08-07 at 5 47 53 PM](https://github.com/user-attachments/assets/fb487d98-1b0f-4153-978f-b8aec0329b49)
+
+### Experience
+![Screen Shot 2024-08-07 at 6 15 02 PM](https://github.com/user-attachments/assets/e3d2f10e-0dd3-4863-a712-b3bd487f7f96)
+
+### Certificates
+![Screen Shot 2024-08-07 at 5 50 19 PM](https://github.com/user-attachments/assets/d533902a-8c16-4a77-8d65-fa2af5203df8)
 
 ## License
 
