@@ -1,0 +1,571 @@
+<%- include('partials/header.ejs', {title: profile.about.firstName}) %>
+    <!-- Summary Section -->
+    <section
+      id="summary"
+      class="container bg-white mx-auto mt-4 flex flex-wrap py-6 px-4 rounded-lg lg:space-x-9 lg:flex-nowrap lg:px-10 lg:mt-6"
+    >
+      <!-- image -->
+      <div class="w-full lg:w-1/6 mb-12" id="profile-image-container">
+        <div
+          class="profile-image-container rounded-md overflow-hidden bg-ProfileBlue w-[200px] h-[200px]"
+        >
+          <% if(profile.about.photo){ %>
+          <img
+            src="<%= imagesSrc %>/<%= profile.about.photo %>"
+            alt="Candidate Profile image"
+            class="w-100"
+            data-profile
+          />
+          <% } %>
+        </div>
+      </div>
+
+      <!-- Info -->
+      <div class="w-full lg:w-5/6" id="profile-info-container">
+        <h1 class="font-bold text-4xl">
+          <%= profile.about.firstName%> <%= profile.about.secondNameInitials%>.
+        </h1>
+        <h2 class="text-xl font-normal mt-5"><%= profile.about.level %></h2>
+        <h4 class="text-lg font-bold mt-6">Summary</h4>
+        <p class="text-base mt-2"><%= profile.about.summary %></p>
+        <h4 class="text-lg font-bold mt-6">Based in:</h4>
+        <p class="text-base mt-1">
+          <%= profile.about.bases.city %>, <%= profile.about.bases.country %>
+        </p>
+
+        <h4 class="text-lg font-bold mt-6">Languages</h4>
+        <p class="text-base mt-1">
+          <% profile.about.languages?.forEach((language, index) => { %> <%= language.name %> 
+          (<%= language.proficiencyLevel%>)<%= index === profile.about.languages.length - 1 ? '.' : ',' %> <% }) %>
+        </p>
+
+        <% if(profile.about.scoresheetLink) {%>
+        <div class="flex mt-6 font-semibold space-x-2">
+          <a
+            href="<%=profile.about.scoresheetLink%>"
+            class="text-Primary"
+            target="_blank"
+            >TalPods Evaluation Report</a
+          >
+          <img src="<%= imagesSrc %>/Vector.svg" alt="" />
+        </div>
+        <% } %>
+      </div>
+    </section>
+
+    <% if(profile.technicalSkills.length > 0) { %>
+    <!-- Technical Skills section -->
+    <section
+      class="container bg-white mx-auto mt-2 py-6 px-4 rounded-lg lg:px-10"
+      data-toggle
+    >
+      <!-- section title -->
+      <div class="flex justify-between">
+        <h2 class="font-bold text-xl">Technical Skills</h2>
+        <img src="<%= imagesSrc %>/Icon.svg" alt="Arrow" />
+      </div>
+      
+      <div class="content">
+        <div class="w-100 h-px bg-Gray my-8"></div>
+        <!-- Skill category 1-->
+        <% profile.technicalSkills.forEach(skillSection => { %>
+        <div class="mb-6 lg:flex lg:space-x-6 lg:space-x-9">
+          <h3 class="mb-2 font-bold text-lg lg:w-1/6">
+            <%= skillSection.sectionName %>:
+          </h3>
+          <p class="lg:w-5/6">
+            <% skillSection.skills.forEach((sk,index) => { %> <%= sk %><%= index
+            === skillSection.skills.length - 1 ? '.' : ',' %> <% }) %>
+          </p>
+        </div>
+        <% }) %>
+      </div>
+    </section>
+    <% } %>
+
+    <% if(profile.experiences.length > 0) { %>
+    <!-- Experiences section -->
+    <section
+    id="experience"
+    class="container bg-white mx-auto mt-2 py-6 px-4 rounded-lg lg:px-10"
+    data-toggle
+    >
+    <!-- Section title -->
+    <div class="flex justify-between">
+      <h2 class="font-bold text-xl">Experiences</h2>
+      <img src="<%= imagesSrc %>/Icon.svg" alt="Arrow" />
+    </div>
+    
+
+    <div class="content custom-height">
+      <div class="w-100 h-px bg-Gray my-8"></div>
+      <% profile.experiences.forEach(function(experience, experienceIndex) { %>
+      <!-- Experience entry -->
+      <div class="flex space-x-9">
+        <!-- left side + Dates -->
+        <div class="hidden lg:block lg:w-1/6">
+          <% experience.positions.forEach(function(position, index) { %>
+          <h2 class="text-base font-bold text-EX<%= index+1 > 3 ? 3 : index+1 %> mb-6">
+            <%= position.startDate %> - <%= position.endDate || "Present" %>
+          </h2>
+          <% if(position.note !== "") {%>
+          <p class="text-sm text-EX2 __web-inspector-hide-shortcut__">
+            <%= position.note %>
+          </p>
+          <% } %>
+          <% }); %>
+        </div>
+
+        <!-- right -->
+        <div class="w-5/6">
+          <div>
+            <!-- Experience titles -->
+            <div>
+              <% experience.positions.forEach(function(position, index) { %>
+              <div class="mb-2 lg:mb-0 experience-title-small">
+                <h2
+                  class="text-base font-bold text-EX<%= index+1 > 3 ? 3 : index+1 %> mb-1 block lg:hidden lg:mb-6"
+                >
+                  <%= position.startDate %> - <%= position.endDate || "Present"%>
+                </h2>
+                
+                <h2
+                  class="text-base font-bold text-EX<%= index+1 > 3 ? 3 : index+1 %> mb-1 experience-title lg:mb-6"
+                >
+                  <span class="block lg:inline-block"><%= position.title %></span>
+                  <span class="hidden lg:inline-block">-</span>
+                  <span class="block lg:inline-block"
+                    ><%= experience.companyName %> | (<%=
+                    experience.companyDomain %>)</span
+                  >
+                </h2>
+              </div>
+              <% }); %>
+            </div>
+
+            <!-- Experience desc -->
+            <div class="experience-desc mt-6 pb-6 <%= experienceIndex === profile.experiences.length - 1 ? '' : 'mb-6' %> ">
+              <p><%= experience.workSummary %></p>
+              <% if (experience.candidatesUniqueAchievement) { %>
+              <p><%= experience.candidatesUniqueAchievement %></p>
+              <% } %>
+              <!-- Responsibilities -->
+              <h3 class="text-base font-bold mt-6">Responsibilities:</h3>
+              <ul class="mt-2 list-disc list-indent pl-2 ml-4">
+                <% experience.responsibilitiesAndAccomplishments.forEach(function(item){ %>
+                <li class="my-2"><%= item %></li>
+                <% }); %>
+              </ul>
+              <!-- Technologies -->
+              <h3 class="text-base font-bold mt-6 mb-3">
+                Tools and Technologies
+              </h3>
+              <div class="">
+                <% experience.toolsAndTechnologies.forEach(function(tech) { %>
+                <span
+                  class="inline-block border-2 border-Gray rounded-full text-xs py-1 px-2 font-bold mb-2"
+                  ><%= tech %></span
+                >
+                <% }); %>
+              </div>
+
+              <!-- Projects -->
+              <% if (experience.projects.length > 0) { %>
+              <div class="bg-LightPurple py-6 px-4 mt-5 rounded-md">
+                <h3 class="text-base font-bold">Projects:</h3>
+                <% experience.projects.forEach(function(project, index) { %>
+                <div class="flex mt-2">
+                  <!-- Project number -->
+                  <span class="inline-block mr-4 font-normal"
+                    ><%= index + 1 %></span
+                  >
+                  <!-- Project info -->
+                  <div>
+                    <div class="">
+                      <span class="text-base font-bold"
+                        ><%= project.projectName %></span
+                      >
+                    </div>
+                    <!-- responsibilities -->
+                    <p class="mt-2"><%= project.description %></p>
+                    <% if (project.responsibilities.length> 0) { %>
+                      <h3 class="text-base font-bold mt-6">Responsibilities:</h3>
+                      <ul class="mb-6 list-disc list-indent pl-2 ml-4">
+                        <% project.responsibilities.forEach(function(responsibility) { %>
+                          <li class="my-2">
+                            <%= responsibility %>
+                          </li>
+                          <% }); %>
+                      </ul>
+                      <% } %>
+                    <div class="flex">
+                      <span class="font-bold mr-3">Link:</span>
+                      <a
+                        href="<%= project.link %>"
+                        target="_blank"
+                        class="text-Primary font-semibold"
+                        ><%= project.link %></a
+                      >
+                    </div>
+                    <!-- Technologies -->
+                    <div class="mt-2">
+                      <% project.technologies.forEach(function(tech) { %>
+                      <span
+                        class="inline-block border-2 border-Gray rounded-full text-xs py-1 px-2 font-bold mb-2"
+                        ><%= tech %></span
+                      >
+                      <% }); %>
+                    </div>
+                  </div>
+                </div>
+                <% }); %>
+              </div>
+              <% } %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% }); %>
+    </div>
+    </section>
+    <% } %>
+
+    <% if(profile.educations.length > 0) { %>
+    <!-- Education section -->
+    <section id="education" class="container bg-white mx-auto mt-2 py-6 px-4 rounded-lg lg:px-10" data-toggle>
+      <!-- Section title -->
+      <div class="flex justify-between">
+        <h2 class="font-bold text-xl">Education</h2>
+        <img src="<%= imagesSrc %>/Icon.svg" alt="Arrow" />
+      </div>
+    
+      <div class="content">
+        <div class="w-100 h-px bg-Gray my-8"></div>
+        <% profile.educations.forEach(function(education,educationIndex) { %>
+          <!-- Education entry -->
+          <div class="flex space-x-9">
+            <!-- left side + Dates -->
+            <div class="hidden lg:block lg:w-1/6">
+              <h2 class="text-base font-bold text-EX1 mb-6">
+                <%= education.startDate %> - <%= education.endDate || "Present" %>
+              </h2>
+            </div>
+            <!-- right -->
+            <div class="w-5/6">
+              <div>
+                <!-- Education titles -->
+                <div>
+                  <!-- title -->
+                  <div class="mb-2 lg:mb-0 education-title-small">
+                    <h2 class="text-base font-bold text-EX1 mb-1 block lg:hidden lg:mb-6">
+                      <%= education.startDate %> - <%= education.endDate || "Present" %>
+                    </h2>
+                    <h2 class="text-base font-bold text-EX1 mb-1 education-title lg:mb-6">
+                      <%= education.institutionName %>
+                    </h2>
+                  </div>
+                </div>
+                <!-- Education desc -->
+                <div class="education-desc pb-6 <%= educationIndex === profile.educations.length - 1 ? '' : 'mb-6' %>">
+                  <p>
+                    <%= education.level %> (<%= education.major %>) <% if (education.gpa) { %> - CGPA: <%= education.gpa %>
+                            <% } %>
+                  </p>
+                  <p>
+                    <%= education.location.city %>, <%= education.location.country %>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% }); %>
+      </div>
+    </section>
+    <% } %>
+
+    <% if(profile.courses.length > 0) { %>
+      <!-- Courses section -->
+    <section id="courses" class="container bg-white mx-auto mt-2 py-6 px-4 rounded-lg lg:px-10" data-toggle="">
+      <!-- Section title -->
+      <div class="flex justify-between">
+        <h2 class="font-bold text-xl">Courses</h2>
+        <img src="<%= imagesSrc %>/Icon.svg" alt="Arrow">
+      </div>
+      
+
+      <div class="content">
+        <div class="w-100 h-px bg-Gray my-8"></div>
+        <% profile.courses.forEach(function(course) { %>
+        <!-- Course 1 -->
+        <div class="lg:flex lg:space-x-9">
+          <!-- left side + Course Title -->
+          <div class="lg:w-1/6">
+            <h2 class="text-base font-bold text-EX1 mb-3 lg:mb-6"><%= course.provider %></h2>
+          </div>
+
+          <!-- right -->
+          <div class="lg:w-5/6">
+            <div>
+              <!-- Courses desc -->
+              <div class="courses-desc pb-6 -mt-2">
+                <ul class="list-disc list-indent pl-2 ml-4">
+                  <% course.courses.forEach(function(c) { %>
+                    <li class="my-2"><%= c %></li>
+                    <% }); %>
+                 
+                  
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% }); %>
+      </div>
+    </section>
+    <% } %>
+
+    <% if(profile.additionalProjects.length > 0) { %>
+    <!-- Projects section -->
+    <section id="projects" class="container bg-white mx-auto mt-2 py-6 px-4 rounded-lg lg:px-10" data-toggle>
+      <!-- Section title -->
+      <div class="flex justify-between">
+        <h2 class="font-bold text-xl">Projects</h2>
+        <img src="<%= imagesSrc %>/Icon.svg" alt="Arrow" />
+      </div>
+     
+      <div class="content">
+        <div class="w-100 h-px bg-Gray my-8"></div>
+        <% profile.additionalProjects.forEach(function(project) { %>
+          <!-- Project entry -->
+          <div class="lg:flex lg:space-x-9 mb-6">
+            <!-- left side + Project Title -->
+            <div class="lg:w-1/6">
+              <h2 class="text-base font-bold text-EX1">
+                <%= project.projectName %>
+              </h2>
+            </div>
+            <!-- Left -->
+            <div class="lg:w-5/6">
+              <div class="lg:flex lg:justify-between">
+                <!-- Projects desc -->
+                <div class="projects-desc mt-2 lg:w-5/6 lg:mt-0">
+                  <p>
+                    <%= project.description %>
+                  </p>
+                  <% if (project.responsibilities.length> 0) { %>
+                    <h3 class="text-base font-bold mt-6">Responsibilities:</h3>
+                    <ul class="mt-2 list-disc list-indent pl-2 ml-4">
+                      <% project.responsibilities.forEach(function(responsibility) { %>
+                        <li class="my-2">
+                          <%= responsibility %>
+                        </li>
+                        <% }); %>
+                    </ul>
+                    <% } %>
+                      <% if (project.technologies.length> 0) { %>
+                        <h3 class="text-base font-bold mt-6 mb-3">Technologies:</h3>
+                        <div class="">
+                          <% project.technologies.forEach(function(tech) { %>
+                            <span class="inline-block border-2 border-Gray rounded-full text-xs py-1 px-2 font-bold mb-2">
+                              <%= tech %>
+                            </span>
+                            <% }); %>
+                        </div>
+                        <% } %>
+                </div>
+                <!-- Right -->
+                <div class="mt-2 lg:w-1/6 lg:mt-0">
+                  <div>
+                    <!-- Projects Link -->
+                    <div class="projects-link lg:text-right">
+                      <% if (project.link) { %>
+                        <a href="<%= project.link %>" target="_blank" class="text-Primary font-semibold">Link</a>
+                        <% } %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% }); %>
+      </div>
+    </section>
+    <% } %>
+
+    <% if(profile.awards.length > 0) { %>
+    <!-- Awards section -->
+    <section id="awards" class="container bg-white mx-auto mt-2 py-6 px-4 rounded-lg lg:px-10" data-toggle>
+      <!-- Section title -->
+      <div class="flex justify-between">
+        <h2 class="font-bold text-xl">Awards & Certificates</h2>
+        <img src="<%= imagesSrc %>/Icon.svg" alt="Arrow" />
+      </div>
+     
+
+      <!-- Awards Container -->
+      <div class=" content">
+        <div class="w-100 h-px bg-Gray my-8"></div>
+        <div class="flex flex-wrap gap-4">
+        <% profile.awards.forEach(function(award) { %>
+          <!-- Award entry -->
+          <div class="w-full bg-LightPurple rounded-lg py-6 px-4 lg:w-[248px] lg:h-[248px]">
+            <img src="<%= imagesSrc %>/award.svg" alt="award" />
+            <p class="text-base text-EX2 my-4">
+              <%= award.courseDate || award.gradeScore %>
+            </p>
+            <h2 class="text-xl font-bold">
+              <%= award.eventCourseTitle %>
+            </h2>
+            <p class="mt-2">
+              <%= award.description %>
+            </p>
+          </div>
+          <% }); %>
+      </div>
+    </div>
+    </section>
+    <% } %>
+
+    <% if(profile.volunteerings.length > 0) { %>
+    <!-- Volunteering section -->
+    <section id="volunteering" class="container bg-white mx-auto mt-2 py-6 px-4 rounded-lg lg:px-10" data-toggle>
+      <!-- Section title -->
+      <div class="flex justify-between">
+        <h2 class="font-bold text-xl">Volunteering</h2>
+        <img src="<%= imagesSrc %>/Icon.svg" alt="Arrow" />
+      </div>
+      
+      <div class="content">
+        <div class="w-100 h-px bg-Gray my-8"></div>
+        <% profile.volunteerings.forEach(function(volunteering, volunteeringIndex) { %>
+          <!-- Volunteering entry -->
+          <div class="flex space-x-9">
+            <!-- left side + Dates -->
+            <div class="hidden lg:block lg:w-1/6">
+              <h2 class="text-base font-bold text-EX1 mb-6">
+                <%= volunteering.startDate %> - <%= volunteering.endDate %>
+              </h2>
+              <p class="text-sm text-EX2 __web-inspector-hide-shortcut__">
+                <%= volunteering.type %>
+              </p>
+            </div>
+            <!-- right -->
+            <div class="w-5/6">
+              <div>
+                <!-- Volunteering titles -->
+                <div>
+                  <!-- title -->
+                  <div class="mb-2 lg:mb-0 volunteer-title-small">
+                    <h2 class="text-base font-bold text-EX1 mb-1 block lg:hidden lg:mb-6">
+                      <%= volunteering.startDate %> - <%= volunteering.endDate %>
+                    </h2>
+                    <h2 class="text-base font-bold text-EX1 mb-1 volunteer-title lg:mb-6">
+                      <%= volunteering.activityName %>
+                    </h2>
+                  </div>
+                </div>
+                <!-- Volunteering desc -->
+                <div class="volunteer-desc pb-6 <%= volunteeringIndex === profile.volunteerings.length - 1 ? '' : 'mb-6' %>">
+                  
+                  <p>
+                    <%= volunteering.description %>
+                  </p>
+                  <p>
+                    <%= volunteering.location.city %>, <%= volunteering.location.country %>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% }); %>
+      </div>
+    </section>
+    <% } %>
+
+    <% if(profile.recommendations.length > 0) { %>
+    <!-- Recommendation section -->
+    <section id="recoms" class="container bg-white mx-auto mt-2 py-6 px-4 rounded-lg lg:px-10" data-toggle>
+      <!-- Section title -->
+      <div class="flex justify-between">
+        <h2 class="font-bold text-xl">Recommendations</h2>
+        <img src="<%= imagesSrc %>/Icon.svg" alt="Arrow" />
+      </div>
+     
+    
+      <div class="content">
+        <div class="w-100 h-px bg-Gray my-8"></div>
+        <% profile.recommendations.forEach(function(recommendation) { %>
+          <!-- recommendation entry -->
+          <div class="lg:flex lg:space-x-9 mb-6">
+            <!-- left side + Project Title -->
+            <div class="lg:w-1/6">
+              <div class="flex add-wrap gap-3 items-center">
+                <!-- Image flex container -->
+                <div class="lg:w-1/4">
+                  <div class="w-12 h-12 rounded-full border border-white <%= recommendation.recommenderImg? 'bg-LightYellow' : '' %>  overflow-hidden">
+                    <!-- here in the data model there is no image -->
+                    <img src="<%= recommendation.recommenderImg ? recommendation.recommenderImg : imagesSrc + '/placeholder.png' %>" alt="profile image" class="w-full" /> 
+                  </div>
+                </div>
+                <!-- Title and name flex container -->
+                <div class="lg:w-3/4">
+                  <h3 class="text-base font-bold">
+                    <%= recommendation.recommenderName %>
+                  </h3>
+                  <p class="text-xs text-EX2">
+                    <%= recommendation.recommenderRelation %>
+                  </p>
+                  
+                </div>
+              </div>
+            </div>
+    
+            <!-- Left -->
+            <div class="lg:w-5/6">
+              <!-- Recommendation desc -->
+              <div class="recom-desc mt-4 lg:mt-0">
+                <p class="text-base">
+                  <%= recommendation.recommendation %>
+                </p>
+                
+              </div>
+            </div>
+          </div>
+          <% }); %>
+      </div>
+    </section>
+    <% } %>
+   
+    <!-- Floating information section -->
+    <section
+      id="floating-info"
+      class="container bg-white mx-auto py-6 px-4 rounded-lg shadow-2xl lg:px-10"
+    >
+      <div class="flex justify-between items-center">
+        <div class="info flex space-x-6">
+          <div
+            class="image w-14 h-14 rounded-md bg-ProfileBlue"
+            id="floatin-section-image"
+          >
+            <% if (profile.about.photo) { %>
+
+                <img
+              src="<%= imagesSrc %>/<%= profile.about.photo %>"
+              alt=""
+              data-floating-image
+            />
+
+              <% }  %>
+          </div>
+          <div class="texts">
+            <h3 class="text-2xl font-bold"><%= profile.about.firstName %> <%= profile.about.secondNameInitials %>.</h3>
+            <p class="text-base"><%= profile.about.level %></p>
+          </div>
+        </div>
+        <div class="arrow cursor-pointer" id="go-to-top">
+          <img src="<%= imagesSrc %>/arrowtop.svg" alt="top arrow" />
+        </div>
+      </div>
+    </section>
+
+    <%- include('partials/footer.ejs') %>

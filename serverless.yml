@@ -1,0 +1,38 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: talpds
+# "app" enables Serverless Framework Dashboard features and sharing them with other Services.
+app: techsphere
+# "service" is the name of this project. This will also be added to your AWS resource names.
+service: techsphere-profile-page
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: eu-north-1
+  stage: dev
+  environment:
+    USERS_TABLE: ${self:custom.tableName}
+    IMAGES_SRC:  ${self:custom.imagesSrc}
+    DB_REGION:   ${self:provider.region}
+
+custom:
+  tableName: "techsphere_talentProfiles"
+  imagesSrc: "https://techsphere.academy.talpods.io/public/imgs"
+
+functions:
+  profile:
+    handler: index.handler
+    environment:
+      TABLE_NAME: "techsphere_talentProfiles"
+    events:
+      - httpApi:
+          path: /profile/{slug}
+          method: get
+      - httpApi:
+          path: /
+          method: get
+
+stages:
+  default:
+    params:
+      tableName: "techsphere_talentProfiles"

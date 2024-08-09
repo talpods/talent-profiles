@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Profile Builder</title>
+  </head>
+  <body class="bg-LightBlue">
+    <!-- Header -->
+    <nav class="bg-DarkestBlue py-4 px-4 lg:px-0">
+      <div class="container mx-auto">
+        <div class="mx-0 lg:-mx-16 handle-margin">
+          <a href="#">
+            <img src="imgs/Logo.svg" alt="talpod logo" class="w-24 lg:w-36"
+          /></a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Summary Section -->
+    <section
+      id="summary"
+      class="container bg-white mx-auto mt-4 flex flex-wrap py-6 px-4 rounded-lg lg:space-x-9 lg:flex-nowrap lg:px-10 lg:mt-6"
+    >
+      <!-- image -->
+      <div class="w-full lg:w-1/6 mb-12" id="profile-image-container">
+        <div
+          class="profile-image-container rounded-md overflow-hidden bg-ProfileBlue w-[200px] h-[200px]"
+        >
+          <img
+            src="imgs/Profile-removebg-preview.png"
+            alt="Candidate Profile image"
+            class="w-100"
+            data-profile
+          />
+        </div>
+      </div>
+
+      <!-- Info -->
+      <div class="w-full lg:w-5/6" id="profile-info-container">
+        <h1 class="font-bold text-4xl">Muhammad A.</h1>
+        <h2 class="text-xl font-normal mt-5">Technical Lead</h2>
+        <h4 class="text-lg font-bold mt-6">Summary</h4>
+        <p class="text-base mt-2">
+          A lead full-stack software engineer with industry-hardened skills.
+          Excellent at problem-solving and communication, can work well in a
+          team and lead them. He has a diverse skill set in different
+          programming languages. Loves to learn new technologies, and build
+          solutions for challenging problems.
+        </p>
+        <h4 class="text-lg font-bold mt-6">Based in:</h4>
+        <p class="text-base mt-1">Lahore, Pakistan</p>
+
+        <h4 class="text-lg font-bold mt-6">Languages</h4>
+        <p class="text-base mt-1">Urdu (Native), English (Highly Proficient)</p>
+
+        <div class="flex mt-6 font-semibold space-x-2">
+          <a href="#" class="text-Primary">TalPods Evaluation Report</a>
+          <img src="imgs/Vector.svg" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Skills section -->
+    <section
+      class="container bg-white mx-auto mt-2 py-6 px-4 rounded-lg lg:px-10"
+      data-toggle
+    >
+      <!-- section title -->
+      <div class="flex justify-between">
+        <h2 class="font-bold text-xl">Technical Skills</h2>
+        <img src="imgs/Icon.svg" alt="Arrow" />
+      </div>
+      <div class="w-100 h-px bg-Gray my-8"></div>
+      <div class="content">
+        <!-- Skill category 1-->
+        <div class="mb-6 lg:flex lg:space-x-6 lg:space-x-9">
+          <h3 class="mb-2 font-bold text-lg lg:w-1/6">
+            Web Frameworks & Libraries:
+          </h3>
+          <p class="lg:w-5/6">
+            Node.js, React, AngularJS, Vue, Ruby on Rails, Laravel, Django
+          </p>
+        </div>
+        <!-- Skill category 2-->
+        <div class="mb-6 lg:flex lg:space-x-6 lg:space-x-9">
+          <h3 class="mb-2 font-bold text-lg lg:w-1/6">
+            Programming Languages:
+          </h3>
+          <p class="lg:w-5/6">JavaScript ES6, Python, Ruby, PHP, Java, C#</p>
+        </div>
+        <!-- Skill category 3-->
+        <div class="mb-6 lg:flex lg:space-x-6 lg:space-x-9">
+          <h3 class="mb-2 font-bold text-lg lg:w-1/6">Database MS:</h3>
+          <p class="lg:w-5/6">
+            MariaDB, Document DB, SQL Server, MySQL, MongoDB, PostgreSQL
+          </p>
+        </div>
+        <!-- Skill category 4-->
+        <div class="mb-6 lg:flex lg:space-x-6 lg:space-x-9">
+          <h3 class="mb-2 font-bold text-lg lg:w-1/6">UML Tools:</h3>
+          <p class="lg:w-5/6">Rational Rose, Microsoft Visio</p>
+        </div>
+        <!-- Skill category 5-->
+        <div class="mb-6 lg:flex lg:space-x-6 lg:space-x-9">
+          <h3 class="mb-2 font-bold text-lg lg:w-1/6">
+            Graphic Designing (UI/UX):
+          </h3>
+          <p class="lg:w-5/6">
+            Adobe Photoshop, Adobe Illustrator, Coral Draw, Flash
+          </p>
+        </div>
+        <!-- Skill category 6-->
+        <div class="mb-6 lg:flex lg:space-x-6 lg:space-x-9">
+          <h3 class="mb-2 font-bold text-lg lg:w-1/6">Others:</h3>
+          <p class="lg:w-5/6">
+            Gulp, Babel, Webpack, Travis, Jira, Mocha, Chai, Jest, Docker,
+            GraphQL, Git, Sequelize ORM, Redis, Kafka, RabbitMQ, AWS
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experiences section -->
+    <section
+      id="experience"
+      class="container bg-white mx-auto mt-2 py-6 px-4 rounded-lg lg:px-10"
+      data-toggle
+    >
+      <!-- Section title -->
+      <div class="flex justify-between">
+        <h2 class="font-bold text-xl">Experiences</h2>
+        <img src="imgs/Icon.svg" alt="Arrow" />
+      </div>
+      <div class="w-100 h-px bg-Gray my-8"></div>
+
+      <div class="content custom-height">
+        <!-- Experience 1 -->
+        <div class="flex space-x-9">
+          <!-- left side + Dates -->
+          <div class="hidden lg:block lg:w-1/6">
+            <h2 class="text-base font-bold text-EX1 mb-6">
+              Aug 2021 - Mar 2024
+            </h2>
+            <h2 class="text-base font-bold text-EX2 mb-6">
+              Jan 2020 - Jul 2021
+            </h2>
+            <h2 class="text-base font-bold text-EX3 mb-6">
+              Jun 2018 - Jan 2020
+            </h2>
+          </div>
+
+          <!-- right -->
+          <div class="w-5/6">
+            <div>
+              <!-- Experience titles -->
+              <div>
+                <!-- title 1 -->
+                <div class="mb-2 lg:mb-0 experience-title-small">
+                  <h2
+                    class="text-base font-bold text-EX1 mb-1 block lg:hidden lg:mb-6"
+                  >
+                    Aug 2021 - Mar 2024
+                  </h2>
+                  <h2
+                    class="text-base font-bold text-EX1 mb-1 experience-title lg:mb-6"
+                  >
+                    <span class="block lg:inline-block"
+                      >Principal Software Engineer
+                    </span>
+                    <span class="hidden lg:inline-block">-</span>
+                    <span class="block lg:inline-block">Xenia | (Xenia)</span>
+                  </h2>
+                </div>
+                <!-- title 2 -->
+                <div class="mb-2 lg:mb-0 experience-title-small">
+                  <h2
+                    class="text-base font-bold text-EX1 mb-1 block lg:hidden lg:mb-6"
+                  >
+                    Jan 2020 - Jul 2021
+                  </h2>
+                  <h2
+                    class="text-base font-bold text-EX2 mb-1 experience-title lg:mb-6"
+                  >
+                    <span class="block lg:inline-block">
+                      Senior Software Engineer
+                    </span>
+                    <span class="hidden lg:inline-block">-</span>
+                    <span class="block lg:inline-block">Xenia | (Xenia)</span>
+                  </h2>
+                </div>
+                <!-- title 3 -->
+                <div class="mb-2 lg:mb-0 experience-title-small">
+                  <h2
+                    class="text-base font-bold text-EX1 mb-1 block lg:hidden lg:mb-6"
+                  >
+                    Jun 2018 - Jan 2020
+                  </h2>
+
+                  <h2
+                    class="text-base font-bold text-EX3 mb-1 experience-title lg:mb-6"
+                  >
+                    <span class="block lg:inline-block">
+                      Software Engineer
+                    </span>
+                    <span class="hidden lg:inline-block">-</span>
+                    <span class="block lg:inline-block">Xenia | (Xenia)</span>
+                  </h2>
+                </div>
+              </div>
+
+              <!-- Experience desc -->
+              <div class="experience-desc mt-6 pb-6">
+                <p>
+                  Xenia, a Miami company backed by PSG Equity, provides a
+                  flexible operations platform for desk-less workers. Their
+                  product includes solutions for team collaboration,
+                  accountability tracking, inspections, and analytics, and is
+                  designed for complex facilities and local property management
+                  teams.
+                </p>
+                <!-- Responsibilities -->
+                <h3 class="text-base font-bold mt-6">Responsibilities:</h3>
+                <ul class="mt-2 list-disc list-indent pl-2 ml-4">
+                  <li class="my-2">
+                    Revamped modules based on customer validation.
+                  </li>
+                  <li class="my-2">
+                    Responsible for revamping two core modules: checklists and
+                    tasks.
+                  </li>
+                  <li>
+                    Worked on checklist builder and integrated the checklist
+                    module with other modules.
+                  </li>
+                  <li class="my-2">
+                    Revamped the tasks dashboard and the entire module.
+                  </li>
+                  <li class="my-2">
+                    Worked on user profiles across organizations.
+                  </li>
+                  <li>
+                    Consulted on the subscription model at the organizational
+                    level.
+                  </li>
+                  <li class="my-2 text-left">
+                    Revamped the mobile application, specifically the dashboard,
+                    navigation bar, checklist, and tasks module. Suggested and
+                    fixed related workflows.
+                  </li>
+                </ul>
+                <!-- Technologies -->
+                <h3 class="text-base font-bold mt-6 mb-3">
+                  Tools and Technologies
+                </h3>
+                <div class="">
+                  <span
+                    class="inline-block border-2 border-Gray rounded-full text-xs py-1 px-2 font-bold mb-2"
+                    >Deep Learning</span
+                  >
+                  <span
+                    class="inline-block border-2 border-Gray rounded-full text-xs py-1 px-2 font-bold mb-2"
+                    >Natural Language Processing (NLP)</span
+                  >
+                  <span
+                    class="inline-block border-2 border-Gray rounded-full text-xs py-1 px-2 font-bold mb-2"
+                    >Generative AI</span
+                  >
+                  <span
+                    class="inline-block border-2 border-Gray rounded-full text-xs py-1 px-2 font-bold mb-2"
+                    >HTML</span
+                  >
+                  <span
+                    class="inline-block border-2 border-Gray rounded-full text-xs py-1 px-2 font-bold mb-2"
+                    >MySQL</span
+                  >
+                  <span
+                    class="inline-block border-2 border-Gray rounded-full text-xs py-1 px-2 font-bold mb-2"
+                    >Amazon Web Services (AWS)</span
+                  >
+                  <span
+                    class="inline-block border-2 border-Gray rounded-full text-xs py-1 px-2 font-bold mb-2"
+                    >Code Review</span
+                  >
+                  <span
+                    class="inline-block border-2 border-Gray rounded-full text-xs py-1 px-2 font-bold mb-2"
+                    >Computer Vision</span
+                  >
+                  <span
+                    class="inline-block border-2 border-Gray rounded-full text-xs py-1 px-2 font-bold mb-2"
+                    >Natural Language Processing (NLP)</span
+                  >
+                  <span
+                    class="inline-block border-2 border-Gray rounded-full text-xs py-1 px-2 font-bold mb-2"
+                    >Generative AI</span
+                  >
+                  <span
+                    class="inline-block border-2 border-Gray rounded-full text-xs py-1 px-2 font-bold mb-2"
+                    >React.js</span
+                  >
+                  <span
+                    class="inline-block border-2 border-Gray rounded-full text-xs py-1 px-2 font-bold mb-2"
+                    >MongoDB</span
+                  >
+                  <span
+                    class="inline-block border-2 border-Gray rounded-full text-xs py-1 px-2 font-bold mb-2"
+                    >Agile Development</span
+                  >
+                  <span
+                    class="inline-block border-2 border-Gray rounded-full text-xs py-1 px-2 font-bold mb-2"
+                    >Django</span
+                  >
+                  <span
+                    class="inline-block border-2 border-Gray rounded-full text-xs py-1 px-2 font-bold mb-2"
+                    >Material UI</span
+                  >
+                </div>
+
+                <!-- Projects -->
+                <div class="bg-LightPurple py-6 px-4 mt-5 rounded-md">
+                  <h3 class="text-base font-bold">Projects:</h3>
+                  <div class="flex mt-2">
+                    <!-- Project number -->
+                    <span class="inline-block mr-4 font-normal">1</span>
+                    <!-- Project info -->
+                    <div>
+                      <div class="">
+                        <span class="text-base font-bold">SmartMitt</span>
+                      </div>
+                      <!-- resposibilities -->
+                      <ul class="mt-2 list-disc list-indent pl-2 ml-4">
+                        <li class="my-2">
+                          Designed an AI model using Yolov5 to detect balls
+                          thrown by Pitchers along with hand detection and
+                          posture detection of the pitcher using AI models.
+                        </li>
+                        <li class="my-2">
+                          Designed Frontend with Vanilla JS to show Pitches
+                          status.
+                        </li>
+                        <li class="my-2">
+                          Wrote backend code with Flask/PHP to analyze, process,
+                          and show results via Rest API.
+                        </li>
+                        <li class="my-2">
+                          Implemented Data Visualization for pitches thrown
+                          using JS libraries.
+                        </li>
+                      </ul>
+                      <div class="flex">
+                        <span class="font-bold mr-3">Link:</span
+                        ><a href="#" class="text-Primary font-semibold"
+                          >https://www.smartmitt.com</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience 2 -->
+        <div class="flex space-x-9 mt-4">
+          <!-- left side + Dates -->
+          <div class="hidden lg:block lg:w-1/6">
+            <h2 class="text-base font-bold text-EX1 mb-6">
+              Aug 2021 - Mar 2024
+            </h2>
+            <p class="text-sm text-EX2">
+              Started as a Full Stack Developer, later got promoted to Lead
+              Developer in Jun 2022
+            </p>
+          </div>
+
+          <!-- right -->
+          <div class="w-5/6">
+            <div>
+              <!-- Experience titles -->
+              <div>
+                <!-- title 1 -->
+                <div class="mb-2 lg:mb-0 experience-title-small">
+                  <h2
+                    class="text-base font-bold text-EX1 mb-1 block lg:hidden lg:mb-6"
+                  >
+                    Aug 2021 - Mar 2024
+                  </h2>
+                  <h2
+                    class="text-base font-bold text-EX1 mb-1 experience-title lg:mb-6"
+                  >
+                    <span class="block lg:inline-block"
+                      >Principal Software Engineer
+                    </span>
+                    <span class="hidden lg:inline-block">-</span>
+                    <span class="block lg:inline-block">Baang | (Remote)</span>
+                  </h2>
+                </div>
+              </div>
+
+              <!-- Experience desc -->
+              <div class="experience-desc mt-6 pb-6">
+                <p>
+                  Baang is a San Francisco startup with a product called Klatch.
+                  Klatch is an instant messenger for communities that includes
+                  threaded chat and notification control.
+                </p>
+                <!-- Responsibilities -->
+                <h3 class="text-base font-bold mt-6">Responsibilities:</h3>
+                <ul class="mt-2 list-disc list-indent pl-2 ml-4">
+                  <li class="my-2">
+                    Initially, the product idea was related to fintech.
+                    Developed a React application for payment processing using a
+                    payment link.
+                  </li>
+                  <li class="my-2">
+                    Worked on the backend in payment layer integrations and
+                    processing.
+                  </li>
+                  <li>
+                    Shortly after releasing the first product, pivoted to an
+                    instant messenger for communities.
+                  </li>
+                  <li class="my-2">
+                    Responsible for the entire backend architecture for a
+                    multi-level chat application.
+                  </li>
+                  <li class="my-2">
+                    Developed a chat invitation application in React.
+                  </li>
+                  <li>
+                    Initially used GetStream for proof of concept, and then
+                    developed our custom architecture around Apache Kafka.
+                  </li>
+                </ul>
+                <!-- Technologies -->
+                <h3 class="text-base font-bold mt-6 mb-3">
+                  Tools and Technologies
+                </h3>
+                <div class="">
+                  <span
+                    class="inline-block border-2 border-Gray rounded-full text-xs py-1 px-2 font-bold mb-2"
+                    >Typescript</span
+                  >
+                  <span
+                    class="inline-block border-2 border-Gray rounded-full text-xs py-1 px-2 font-bold mb-2"
+                    >Node.js</span
+                  >
+                  <span
+                    class="inline-block border-2 border-Gray rounded-full text-xs py-1 px-2 font-bold mb-2"
+                    >React</span
+                  >
+                  <span
+                    class="inline-block border-2 border-Gray rounded-full text-xs py-1 px-2 font-bold mb-2"
+                    >Material UI</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience 3 -->
+        <div class="flex space-x-9 mt-4">
+          <!-- left side + Dates -->
+          <div class="hidden lg:block lg:w-1/6">
+            <h2 class="text-base font-bold text-EX1 mb-6">
+              Jan 2019 - Jan 2020
+            </h2>
+          </div>
+
+          <!-- right -->
+          <div class="w-5/6">
+            <div>
+              <!-- Experience titles -->
+              <div>
+                <!-- title 1 -->
+                <div class="mb-2 lg:mb-0 experience-title-small">
+                  <h2
+                    class="text-base font-bold text-EX1 mb-1 block lg:hidden lg:mb-6"
+                  >
+                    Jan 2019 - Jan 2020
+                  </h2>
+                  <h2
+                    class="text-base font-bold text-EX1 mb-1 experience-title lg:mb-6"
+                  >
+                    <span class="block lg:inline-block"
+                      >Senior Software Engineer
+                    </span>
+                    <span class="hidden lg:inline-block">-</span>
+                    <span class="block lg:inline-block"
+                      >EMPG Labs | Lahore, Pakistan (Onsite)</span
+                    >
+                  </h2>
+                </div>
+              </div>
+
+              <!-- Experience desc -->
+              <div class="experience-desc mt-6 pb-6">
+                <p>
+                  EMPG group owns several classified portals, including
+                  Bayut-Dubizzle in the UAE, Zameen in Pakistan, OLX in Pakistan
+                  and Egypt, Lamudi in Indonesia and the Philippines, Mubawab in
+                  North Africa, and Kaidee in Thailand, which are some of the
+                  strongest brands in the market.
+                </p>
+                <!-- Responsibilities -->
+                <h3 class="text-base font-bold mt-6">Responsibilities:</h3>
+                <ul class="mt-2 list-disc list-indent pl-2 ml-4">
+                  <li class="my-2">
+                    I joined the CRM team and was responsible for onboarding and
+                    migrating newly acquired classified portals from third-party
+                    CRMs to the in-house CRM.
+                  </li>
+                  <li class="my-2">
+                    Once the process was automated, I led the effort to build a
+                    revamped CRM that could cater to the needs of multiple
+                    classified portals from different regions while also
+                    maintaining the legacy system with my team.
+                  </li>
+                  <li>
+                    Specifically, I served as the tech lead for several core
+                    modules of the CRM, including Contracts, Opportunities,
+                    Payments, Products, and Packages. My team and I worked hard
+                    to deliver revamped CRM modules and integrate them into the
+                    legacy CRM.
+                  </li>
+                  <li class="my-2">
+                    Based on my skills, performance, and the trust I gained, I
+                    became part of the reliability and review team. I was
+                    responsible for providing support and resolving any
+                    production issues that arose. I had full access to
+                    production databases and servers.
+                  </li>
+                </ul>
+                <!-- Technologies -->
+                <h3 class="text-base font-bold mt-6 mb-3">
+                  Tools and Technologies
+                </h3>
+                <div class="">
+                  <span
+                    class="inline-block border-2 border-Gray rounded-full text-xs py-1 px-2 font-bold mb-2"
+                    >Typescript</span
+                  >
+
+                  <span
+                    class="inline-block border-2 border-Gray rounded-full text-xs py-1 px-2 font-bold mb-2"
+                    >Material UI</span
+                  >
+                  <span
+                    class="inline-block border-2 border-Gray rounded-full text-xs py-1 px-2 font-bold mb-2"
+                    >React</span
+                  >
+                  <span
+                    class="inline-block border-2 border-Gray rounded-full text-xs py-1 px-2 font-bold mb-2"
+                    >Node.js</span
+                  >
+                </div>
+
+                <!-- Projects -->
+                <div class="bg-LightPurple py-6 px-4 mt-5 rounded-md">
+                  <h3 class="text-base font-bold">Projects:</h3>
+                  <div class="flex mt-2">
+                    <!-- Project number -->
+                    <span class="inline-block mr-4 font-normal">1</span>
+                    <!-- Project info -->
+                    <div>
+                      <div class="">
+                        <span class="text-base font-bold">SmartMitt</span>
+                      </div>
+                      <!-- resposibilities -->
+                      <p class="my-2">
+                        An AI-based sports technology company designs LED
+                        pitching targets for baseball and softball, providing
+                        vital data and feedback to players and coaches
+                        worldwide.
+                      </p>
+
+                      <div class="flex">
+                        <span class="font-bold mr-3">Link:</span
+                        ><a href="#" class="text-Primary font-semibold"
+                          >https://www.smartmitt.com</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience 4 -->
+        <div class="flex space-x-9 mt-4">
+          <!-- left side + Dates -->
+          <div class="hidden lg:block lg:w-1/6">
+            <h2 class="text-base font-bold text-EX1 mb-6">
+              Apr 2020 - Jun 2020
+            </h2>
+          </div>
+
+          <!-- right -->
+          <div class="w-5/6">
+            <div>
+              <!-- Experience titles -->
+              <div>
+                <!-- title 1 -->
+                <div class="mb-2 lg:mb-0 experience-title-small">
+                  <h2
+                    class="text-base font-bold text-EX1 mb-1 block lg:hidden lg:mb-6"
+                  >
+                    Apr 2020 - Jun 2020
+                  </h2>
+                  <h2
+                    class="text-base font-bold text-EX1 mb-1 experience-title lg:mb-6"
+                  >
+                    <span class="block lg:inline-block"
+                      >Senior Software Engineer - Frontend
+                    </span>
+                    <span class="hidden lg:inline-block">-</span>
+                    <span class="block lg:inline-block"
+                      >SSI | Lahore, Pakistan</span
+                    >
+                  </h2>
+                </div>
+              </div>
+
+              <!-- Experience desc -->
+              <div class="experience-desc mt-6 pb-6">
+                <!-- Technologies -->
+                <h3 class="text-base font-bold mt-6 mb-3">
+                  Tools and Technologies
+                </h3>
+                <div class="">
+                  <span
+                    class="inline-block border-2 border-Gray rounded-full text-xs py-1 px-2 font-bold mb-2"
+                    >Laravel</span
+                  >
+
+                  <span
+                    class="inline-block border-2 border-Gray rounded-full text-xs py-1 px-2 font-bold mb-2"
+                    >Material UI</span
+                  >
+                  <span
+                    class="inline-block border-2 border-Gray rounded-full text-xs py-1 px-2 font-bold mb-2"
+                    >React</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience 5 -->
+        <div class="flex space-x-9">
+          <!-- left side + Dates -->
+          <div class="hidden lg:block lg:w-1/6">
+            <h2 class="text-base font-bold text-EX1 mb-6">
+              Dec 2016 - Apr 2020
+            </h2>
+          </div>
+
+          <!-- right -->
+          <div class="w-5/6">
+            <div>
+              <!-- Experience titles -->
+              <div>
+                <!-- title 1 -->
+                <div class="mb-2 lg:mb-0 experience-title-small">
+                  <h2
+                    class="text-base font-bold text-EX1 mb-1 block lg:hidden lg:mb-6"
+                  >
+                    Aug 2021 - Mar 2024
+                  </h2>
+                  <h2
+                    class="text-base font-bold text-EX1 mb-1 experience-title lg:mb-6"
+                  >
+                    <span class="block lg:inline-block">
+                      Full Stack Software Engineer
+                    </span>
+                    <span class="hidden lg:inline-block">-</span>
+                    <span class="block lg:inline-block">Caremerge</span>
+                  </h2>
+                </div>
+              </div>
+
+              <!-- Experience desc -->
+              <div class="experience-desc mt-6 pb-6">
+                <p>
+                  Caremerge is a Silicon Valley-based company having a mission
+                  to reinvent the senior living experience.
+                </p>
+                <!-- Responsibilities -->
+                <h3 class="text-base font-bold mt-6">Responsibilities:</h3>
+                <ul class="mt-2 list-disc list-indent pl-2 ml-4">
+                  <li class="my-2">
+                    Implemented smart logging to efficiently log code content,
+                    allowing for on-demand debugging and reducing costs of log
+                    management services such as Sumo Logic.
+                  </li>
+                  <li class="my-2">
+                    Designed and developed a feature flag architecture to
+                    eliminate sandbox environments, enabling fast releases and
+                    feature demos directly on production, thus reducing costs
+                    associated with sandbox, demo, and test servers.
+                  </li>
+                  <li>
+                    Developed a React application to replace the legacy PHP
+                    application as the main application for Caremerge.
+                  </li>
+                  <li class="my-2">
+                    Created a batch processing microservice for delayed jobs
+                    like batch printouts and exports.
+                  </li>
+                  <li class="my-2">
+                    Designed and developed the entire architecture of the
+                    Generic Form Builder, including frontend (React), backend
+                    (Node.js), boilerplate, gulp/webpack scripts, Redux setup,
+                    integration with Node.js, CDN, and deployment process with
+                    CDN versioning. The Generic Form Builder is an application
+                    in Caremerge that enables staff members to build custom
+                    forms to be filled by residents of senior living facilities.
+                  </li>
+                  <li>
+                    Developed React plugins to meet custom requirements of the
+                    application.
+                  </li>
+                  <li class="my-2 text-left">
+                    Part of a 5-member team (SWAT Team), responsible for
+                    providing support and resolving production issues one day a
+                    week. Each member has access rights equal to VP of
+                    Engineering.
+                  </li>
+                  <li class="my-2 text-left">
+                    Migrated the main application and microservices from Kue to
+                    RabbitMQ.
+                  </li>
+                  <li class="my-2 text-left">
+                    Introduced lint rules for code consistency across teams.
+                  </li>
+                  <li class="my-2 text-left">
+                    Delivered intelligence reports with state-level restrictions
+                    for multiple clients.
+                  </li>
+                  <li class="my-2 text-left">
+                    Acquired proficiency in Atlassian tools (Jira, Confluence,
+                    etc.).
+                  </li>
+                  <li class="my-2 text-left">
+                    Worked proficiently as part of agile teams (Scrum) and
+                    sprints.
+                  </li>
+                  <li class="my-2 text-left">
+                    Studied microservice and serverless architecture as part of
+                    quarterly goals.
+                  </li>
+                  <li class="my-2 text-left">
+                    Taught new hires best practices in agile methodologies, the
+                    deployment cycle, and Git workflows.
+                  </li>
+                </ul>
+                <!-- Technologies -->
+                <h3 class="text-base font-bold mt-6 mb-3">
+                  Tools and Technologies
+                </h3>
+                <div class="">
+                  <span
+                    class="inline-block border-2 border-Gray rounded-full text-xs py-1 px-2 font-bold mb-2"
+                    >Typescript</span
+                  >
+                  <span
+                    class="inline-block border-2 border-Gray rounded-full text-xs py-1 px-2 font-bold mb-2"
+                    >Node.js</span
+                  >
+
+                  <span
+                    class="inline-block border-2 border-Gray rounded-full text-xs py-1 px-2 font-bold mb-2"
+                    >React</span
+                  >
+                  <span
+                    class="inline-block border-2 border-Gray rounded-full text-xs py-1 px-2 font-bold mb-2"
+                    >Material UI</span
+                  >
+                </div>
+
+                <!-- Projects -->
+                <div class="bg-LightPurple py-6 px-4 mt-5 rounded-md">
+                  <h3 class="text-base font-bold">Projects:</h3>
+
+                  <div class="flex mt-2">
+                    <!-- Project number -->
+                    <span class="inline-block mr-4 font-normal">1</span>
+                    <!-- Project info -->
+                    <div>
+                      <div class="">
+                        <span class="text-base font-bold">SmartMitt</span>
+                      </div>
+                      <!-- resposibilities -->
+                      <p class="mt-2">
+                        An AI-based sports technology company designs LED
+                        pitching targets for baseball and softball, providing
+                        vital data and feedback to players and coaches
+                        worldwide.
+                      </p>
+
+                      <div class="flex">
+                        <span class="font-bold mr-3">Link:</span
+                        ><a href="#" class="text-Primary font-semibold"
+                          >https://www.smartmitt.com</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education section -->
+    <section
+      id="education"
+      class="container bg-white mx-auto mt-2 py-6 px-4 rounded-lg lg:px-10"
+      data-toggle
+    >
+      <!-- Section title -->
+      <div class="flex justify-between">
+        <h2 class="font-bold text-xl">Education</h2>
+        <img src="imgs/Icon.svg" alt="Arrow" />
+      </div>
+      <div class="w-100 h-px bg-Gray my-8"></div>
+
+      <div class="content">
+        <!-- Education 1 -->
+        <div class="flex space-x-9">
+          <!-- left side + Dates -->
+          <div class="hidden lg:block lg:w-1/6">
+            <h2 class="text-base font-bold text-EX1 mb-6">2019 - 2020</h2>
+          </div>
+
+          <!-- right -->
+          <div class="w-5/6">
+            <div>
+              <!-- Education titles -->
+              <div>
+                <!-- title 1 -->
+                <div class="mb-2 lg:mb-0 education-title-small">
+                  <h2
+                    class="text-base font-bold text-EX1 mb-1 block lg:hidden lg:mb-6"
+                  >
+                    2019 - 2020
+                  </h2>
+                  <h2
+                    class="text-base font-bold text-EX1 mb-1 education-title lg:mb-6"
+                  >
+                    Universität Bonn
+                  </h2>
+                </div>
+              </div>
+
+              <!-- Education desc -->
+              <div class="education-desc pb-6">
+                <p>MS (Computer Science)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Education 2 -->
+        <div class="flex space-x-9">
+          <!-- left side + Dates -->
+          <div class="hidden lg:block lg:w-1/6">
+            <h2 class="text-base font-bold text-EX1 mb-6">2012 - 2016</h2>
+          </div>
+
+          <!-- right -->
+          <div class="w-5/6">
+            <div>
+              <!-- Education titles -->
+              <div>
+                <!-- title 1 -->
+                <div class="mb-2 lg:mb-0 education-title-small">
+                  <h2
+                    class="text-base font-bold text-EX1 mb-1 block lg:hidden lg:mb-6"
+                  >
+                    2012 - 2016
+                  </h2>
+                  <h2
+                    class="text-base font-bold text-EX1 mb-1 education-title lg:mb-6"
+                  >
+                    Punjab University College of Information Technology
+                  </h2>
+                </div>
+              </div>
+
+              <!-- Education desc -->
+              <div class="education-desc pb-6">
+                <p>BS (Software Engineering) - CGPA: 3.29/4.0</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Courses section -->
+    <section
+      id="courses"
+      class="container bg-white mx-auto mt-2 py-6 px-4 rounded-lg lg:px-10"
+      data-toggle
+    >
+      <!-- Section title -->
+      <div class="flex justify-between">
+        <h2 class="font-bold text-xl">Courses</h2>
+        <img src="imgs/Icon.svg" alt="Arrow" />
+      </div>
+      <div class="w-100 h-px bg-Gray my-8"></div>
+
+      <div class="content">
+        <!-- Course 1 -->
+        <div class="lg:flex lg:space-x-9">
+          <!-- left side + Course Title -->
+          <div class="lg:w-1/6">
+            <h2 class="text-base font-bold text-EX1 mb-3 lg:mb-6">Coursera</h2>
+          </div>
+
+          <!-- right -->
+          <div class="lg:w-5/6">
+            <div>
+              <!-- Courses desc -->
+              <div class="courses-desc pb-6 -mt-2">
+                <ul class="list-disc list-indent pl-2 ml-4">
+                  <li class="my-2">AWS Fundamentals</li>
+                  <li class="my-2">Deep Learning Specialization</li>
+                  <li>Generative Adversarial Networks (GANs) Specialization</li>
+                  <li class="my-2">Generative AI with LLMS</li>
+                  <li class="my-2">Machine Learning</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 1 -->
+        <div class="lg:flex lg:space-x-9">
+          <!-- left side + Course Title -->
+          <div class="lg:w-1/6">
+            <h2 class="text-base font-bold text-EX1 mb-3 lg:mb-6">
+              Deep Learning AI
+            </h2>
+          </div>
+
+          <!-- right -->
+          <div class="w-5/6">
+            <div>
+              <!-- Courses desc -->
+              <div class="courses-desc -mt-2">
+                <ul class="list-disc list-indent pl-2 ml-4">
+                  <li class="my-2">Prompt Engineering</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects section -->
+    <section
+      id="projects"
+      class="container bg-white mx-auto mt-2 py-6 px-4 rounded-lg lg:px-10"
+      data-toggle
+    >
+      <!-- Section title -->
+      <div class="flex justify-between">
+        <h2 class="font-bold text-xl">Projects</h2>
+        <img src="imgs/Icon.svg" alt="Arrow" />
+      </div>
+      <div class="w-100 h-px bg-Gray my-8"></div>
+
+      <div class="content">
+        <!-- Projects 1 -->
+        <div class="lg:flex lg:space-x-9 mb-6">
+          <!-- left side + Project Title -->
+          <div class="lg:w-1/6">
+            <h2 class="text-base font-bold text-EX1">CombiDrive</h2>
+          </div>
+
+          <!-- Left -->
+          <div class="lg:w-5/6">
+            <div class="lg:flex lg:justify-between">
+              <!-- Projects desc -->
+              <div class="projects-desc mt-2 lg:w-5/6 lg:mt-0">
+                <p>
+                  CombiDrive was my final year project. It is an automated
+                  system that manages and aggregates the contents of multiple
+                  cloud storage services in one place, providing combined
+                  storage space of individual accounts and making data
+                  management easier.
+                </p>
+              </div>
+              <!-- Right -->
+              <div class="mt-2 lg:w-1/6 lg:mt-0">
+                <div>
+                  <!-- Projects Link -->
+                  <div class="projects-link lg:text-right">
+                    <a href="#" class="text-Primary font-semibold">Link</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Projects 1 -->
+        <div class="lg:flex lg:space-x-9 mb-6">
+          <!-- left side + Project Title -->
+          <div class="lg:w-1/6">
+            <h2 class="text-base font-bold text-EX1">Pet Project</h2>
+          </div>
+
+          <!-- Left -->
+          <div class="lg:w-5/6">
+            <div class="lg:flex lg:justify-between">
+              <!-- Projects desc -->
+              <div class="projects-desc mt-2 lg:w-5/6 lg:mt-0">
+                <p>
+                  My pet project is a bot that provides multiple integrations
+                  through one service, such as Travis, Slack, Google Docs,
+                  Facebook, Github, and more.
+                </p>
+              </div>
+              <!-- Right -->
+              <div class="mt-2 lg:w-1/6 lg:mt-0">
+                <div>
+                  <!-- Projects Link -->
+                  <div class="projects-link lg:text-right">
+                    <a href="#" class="text-Primary font-semibold">Link</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Awards section -->
+    <section
+      id="awards"
+      class="container bg-white mx-auto mt-2 py-6 px-4 rounded-lg lg:px-10"
+      data-toggle
+    >
+      <!-- Section title -->
+      <div class="flex justify-between">
+        <h2 class="font-bold text-xl">Awards & Certificates</h2>
+        <img src="imgs/Icon.svg" alt="Arrow" />
+      </div>
+      <div class="w-100 h-px bg-Gray my-8"></div>
+
+      <!-- Awards Container -->
+      <div class="flex flex-wrap gap-4 content">
+        <!-- Award 1 -->
+        <div
+          class="w-full bg-LightPurple rounded-lg py-6 px-4 lg:w-[248px] lg:h-[248px]"
+        >
+          <img src="imgs/award.svg" alt="award" />
+          <p class="text-base text-EX2 my-4">Aug 2025</p>
+          <h2 class="text-xl font-bold">AWS Certified Developer Associate</h2>
+        </div>
+
+        <!-- Award 2 -->
+        <div
+          class="w-full bg-LightPurple rounded-lg py-6 px-4 lg:w-[248px] lg:h-[248px]"
+        >
+          <img src="imgs/award.svg" alt="award" />
+          <p class="text-base text-EX2 my-4">Oct 2024</p>
+          <h2 class="text-xl font-bold">AWS Certified Cloud Practitioner</h2>
+        </div>
+
+        <!-- Award 3 -->
+        <div
+          class="w-full bg-LightPurple rounded-lg py-6 px-4 lg:w-[248px] lg:h-[248px]"
+        >
+          <img src="imgs/award.svg" alt="award" />
+          <p class="text-base text-EX2 my-4">May 2023</p>
+          <h2 class="text-xl font-bold">Executive Leadership - LinkedIn</h2>
+        </div>
+
+        <!-- Award 4 -->
+        <div
+          class="w-full bg-LightPurple rounded-lg py-6 px-4 lg:w-[248px] lg:h-[248px]"
+        >
+          <img src="imgs/award.svg" alt="award" />
+          <p class="text-base text-EX2 my-4">Aug 2025</p>
+          <h2 class="text-xl font-bold">AWS Certified Developer Associate</h2>
+        </div>
+
+        <!-- Award 5 -->
+        <div
+          class="w-full bg-LightPurple rounded-lg py-6 px-4 lg:w-[248px] lg:h-[248px]"
+        >
+          <img src="imgs/award.svg" alt="award" />
+          <p class="text-base text-EX2 my-4">Oct 2024</p>
+          <h2 class="text-xl font-bold">AWS Certified Cloud Practitioner</h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recommendation section -->
+    <section
+      id="recoms"
+      class="container bg-white mx-auto mt-2 py-6 px-4 rounded-lg lg:px-10"
+      data-toggle
+    >
+      <!-- Section title -->
+      <div class="flex justify-between">
+        <h2 class="font-bold text-xl">Recommendations</h2>
+        <img src="imgs/Icon.svg" alt="Arrow" />
+      </div>
+      <div class="w-100 h-px bg-Gray my-8"></div>
+
+      <div class="content">
+        <!-- recommendation 1 -->
+        <div class="lg:flex lg:space-x-9 mb-6">
+          <!-- left side + Project Title -->
+          <div class="lg:w-1/6">
+            <div class="flex add-wrap gap-3 items-center">
+              <!-- Image flex container -->
+              <div class="lg:w-1/4">
+                <div
+                  class="w-12 h-12 rounded-full border border-white bg-LightYellow overflow-hidden"
+                >
+                  <img
+                    src="imgs/Profile2.png"
+                    alt="profile image"
+                    class="w-full"
+                  />
+                </div>
+              </div>
+              <!-- Title and name flex container -->
+              <div class="lg:w-3/4">
+                <h3 class="text-base font-bold">Name</h3>
+                <p class="text-xs text-EX2">
+                  Associate Vice President Sales & Support
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Left -->
+          <div class="lg:w-5/6">
+            <!-- Recommendation desc -->
+            <div class="recom-desc mt-4 lg:mt-0">
+              <p class="text-base">
+                I am stating and writing for the most benevolent person who is
+                creative yet his visual elements are always going to talk in a
+                reform manner.His designing skills are always furnished and
+                looks dominated.Its a greatful gesture for writing something
+                about him over here.I use to work aong with him in Design and
+                development Department.Abuzer always use to crack new ideas and
+                his Iconic representations are always impressive and catch to
+                the client needs.He can manipulate and can work any sort of
+                design whichever or whatever clients wants.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- recommendation 2 -->
+        <div class="lg:flex lg:space-x-9 mb-6">
+          <!-- left side + Project Title -->
+          <div class="lg:w-1/6">
+            <div class="flex add-wrap gap-3 items-center">
+              <!-- Image flex container -->
+              <div class="lg:w-1/4">
+                <div
+                  class="w-12 h-12 rounded-full border border-white bg-LightYellow overflow-hidden"
+                >
+                  <img
+                    src="imgs/Profile3.png"
+                    alt="profile image"
+                    class="w-full"
+                  />
+                </div>
+              </div>
+              <!-- Title and name flex container -->
+              <div class="lg:w-3/4">
+                <h3 class="text-base font-bold">Khuram Khan</h3>
+                <p class="text-xs text-EX2">
+                  Associate Vice President Sales & Support
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Left -->
+          <div class="w-5/6">
+            <!-- Recommendation desc -->
+            <div class="recom-desc mt-4 lg:mt-0">
+              <p class="text-base">
+                I am stating and writing for the most benevolent person who is
+                creative yet his visual elements are always going to talk in a
+                reform manner.His designing skills are always furnished and
+                looks dominated.Its a greatful gesture for writing something
+                about him over here.I use to work aong with him in Design and
+                development Department.Abuzer always use to crack new ideas and
+                his Iconic representations are always impressive and catch to
+                the client needs.He can manipulate and can work any sort of
+                design whichever or whatever clients wants.To be honest i
+                remember he has made the website for the Client who is based in
+                USA but he was born in Ghana and for himself he has made the
+                website http://lesfreresunis It was remarkable website which
+                represents peach and harmony.Above all his nature and he is very
+                down to earth person.I wish him success for his future
+                endeavours.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Floating information section -->
+    <section
+      id="floating-info"
+      class="container bg-white mx-auto py-6 px-4 rounded-lg shadow-2xl lg:px-10"
+    >
+      <div class="flex justify-between items-center">
+        <div class="info flex space-x-6">
+          <div
+            class="image w-14 h-14 rounded-md bg-ProfileBlue"
+            id="floatin-section-image"
+          >
+            <img
+              src="imgs/Profile-removebg-preview.png"
+              alt=""
+              data-floating-image
+            />
+          </div>
+          <div class="texts">
+            <h3 class="text-2xl font-bold">Muhammad A.</h3>
+            <p class="text-base">Technical Lead</p>
+          </div>
+        </div>
+        <div class="arrow cursor-pointer" id="go-to-top">
+          <img src="imgs/arrowtop.svg" alt="top arrow" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer section -->
+    <footer class="bg-DarkestBlue mt-4 py-6 px-4 lg:px-0">
+      <div class="container mx-auto">
+        <div class="flex justify-between mx-0 lg:-mx-16 handle-margin">
+          <div class="logo flex items-center space-x-4">
+            <img src="imgs/Logo.svg" alt="Logo" class="w-16" />
+            <p class="text-xs text-white">
+              &copy; 2022 talpods.io | All rights reserved.
+            </p>
+          </div>
+          <div class="linkedin">
+            <a href="https://www.linkedin.com/company/tal-pods/" target="_blank"
+              ><img src="https://techsphere.academy.talpods.io/public/imgs/linkedin.svg" alt="" class="w-8"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
