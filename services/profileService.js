@@ -16,12 +16,19 @@ class ProfileService {
   }
 
   static _generateQueryParams(slug) {
+    let paramKeys = {
+      pk: { S: 'talentProfile' },
+      sk: { S: `talentProfile#${slug}` },
+    }
+    if(configs.stage === 'prod'){
+      paramKeys = {
+        PK: { S: 'talentProfile' },
+        SK: { S: `talentProfile#${slug}` },
+      }
+    }
     return {
       TableName: this.TableName,
-      Key: {
-        pk: { S: 'talentProfile' },
-        sk: { S: `talentProfile#${slug}` },
-      },
+      Key: paramKeys,
     };
   }
 }
